@@ -1,0 +1,344 @@
+/* Variables for JDN brand colors */
+:root {
+    --jdn_red: #BA0C2F;
+    --jdn_black: #2D2A29;
+    --jdn_dark_blue: #1D4F91;
+    --jdn_light_blue: #418FDE;
+    --jdn_yellow: #F1C400;
+    --jdn_purple: #7C6992;
+    --jdn_gray: #D0D0CE;
+}
+
+/* Global styling */
+* {
+    font-size: 100%;
+    font-family: 'Calibri', sans-serif;
+    font-weight: bold;
+    color: var(--jdn_black);
+}
+
+/* Page title styling */
+h1 {
+    color: var(--jdn_black);
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 20px !important; /* Important for margin override */
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 70%;
+    height: 3px;
+    background-color: var(--jdn_red);
+    position: absolute;
+    bottom: -10px;
+    left: 15%;
+}
+
+h2 {
+    margin-bottom: 30px !important;
+    margin-top: 10px !important;
+}
+
+h6 {
+    margin-top: 30px !important;
+}
+
+/* Main content styling */
+main {
+    padding: 15px;
+}
+
+/* Button styling */
+
+button{
+    padding: 5px 10px; /* Add padding back to button */
+    border: none;
+    border-radius: 0; /* Remove rounded corners */
+    font-size: 20px;
+}
+
+button:enabled{
+    background-color: var(--jdn_red);
+    color: white;
+}
+
+button:disabled {
+    background-color: #777777;
+}
+
+button text{
+    padding: 10px;
+}
+button span {
+    display: inline-block;
+    padding: 10px; /* Move padding to span */
+}
+
+button:enabled:hover {
+    background-color: var(--jdn_black);
+}
+
+/* Styles for buttons with the remove-button class */
+button.remove-button {
+    margin: 10px;
+    padding: 0px;
+    background-color: transparent;
+    color: var(--jdn_black);
+    font-size: 20px;
+    cursor: pointer; /* Show cursor as pointer */
+
+    /* Ensure "X" takes up all the space in the button */
+    width: auto;
+    height: auto;
+    line-height: 1; /* Set line-height to 1 for vertical alignment */
+}
+
+/* Set text color for normal state */
+button.remove-button span {
+    color: var(--jdn_black);
+}
+
+/* Set text color for hover state */
+button.remove-button:hover {
+    color: var(--jdn_red);
+}
+/* Set text color for hover state */
+button.remove-button:hover {
+    background-color: transparent;
+}
+
+
+/* UPLOAD */
+
+/* File input styling */
+#file-upload {
+    display: none;
+}
+
+span {
+    display: block;
+}
+
+.select-videos {
+    border: 2px dashed var(--jdn_red);
+    background-color: var(--jdn_gray);
+    width: 60%;
+    margin: 0 auto; /* Center the rectangle */
+}
+
+.select-videos p {
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.selected-videos-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust the gap between items */
+}
+
+.list-group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.list-group-item {
+    background-color: transparent; 
+    border: none;
+}
+
+/* SETTINGS */
+
+/* Container for button and text */
+.settings-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid var(--jdn_black); /* Black outlining */
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.settings-container p {
+    margin-bottom: 0px;
+    font-size: 1.2em;
+}
+
+
+/* RESULTS */
+
+/* Container for video navigation */
+.video-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.current-video-text {
+    font-size: 2em;
+    display: block;
+}
+
+.fit-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  /* makes the image fit without stretching */
+}
+
+
+/* LISTS */
+
+/* No  bullets for list items */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Spacing between list items */
+li {
+    margin-bottom: 10px;
+}
+
+
+/* Custom scrollbar */
+
+.scrollbar {
+    margin-left: 30px;
+    float: left;
+    height: 300px;
+    width: 100%; /* Set the width to 100% to prevent horizontal scrolling */
+    background: #fff;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+}
+
+.force-overflow {
+    min-height: 450px;
+}
+    
+.scrollbar-primary::-webkit-scrollbar {
+    width: 12px;
+    background-color: var(--jdn_gray); 
+}
+
+.scrollbar-primary::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--jdn_red); 
+}
+
+.scrollbar-danger::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--jdn_gray);
+    border-radius: 10px; 
+}
+    
+    
+thead {
+    background-color: var(--jdn_red);
+    color: var(--jdn_gray)
+}
+
+.table {
+    margin: 10px;
+    border-color: var(--jdn_red);
+}
+
+
+/* SETTINGS */
+
+/* The Advanced-switch - the box around the slider  */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    border-radius: 0;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider from the advanced switch*/
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--jdn_gray);
+    border-color: #2D2A29;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--jdn_red);
+  }
+  input:checked + .slider:before {
+    background-color: var(--jdn_black);
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px var(--jdn_red);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  .progress-container {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 50px; /* Add some top margin for spacing */
+    padding-bottom: 25px;
+  }
+
+  .progress-label {
+    float: right;
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
+   
+  .bg-canceled {
+    background-color: gray !important;
+}
+
+mark {
+    background-color: var(--jdn_dark_blue);
+    color: white;
+}
+
+ul>li>p {
+    text-align: start;
+}
+mark {
+    background-color: var(--jdn_red);
+}
+
+#timelineSegment {
+    max-height: 250px;
+    overflow-y: auto;
+}

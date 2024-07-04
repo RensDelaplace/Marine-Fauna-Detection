@@ -1,0 +1,14 @@
+<div class="topnav">
+    <div class="topnav-left">
+        <!--img src="static/images/jdn_wit.svg"-->
+        <p>Marine Fauna Detection</p>
+    </div>
+    <div class="topnav-right">
+        <a class="nav-link {% if request.url.path.endswith('/upload') %}active{% endif %}" href="upload">Upload</a>
+        <a class="nav-link {% if request.url.path.endswith('/results') %}active{% endif %}" href="results">Results</a>
+        {% if advanced == '1' %}
+            <a class="nav-link {% if request.url.path.endswith('/retrain') %}active{% endif %}" href="retrain">Retrain</a>
+        {% endif %}
+        <a class="nav-link {% if request.url.path.endswith('/settings') %}active{% endif %}" href="settings">Settings</a>
+    </div>
+</div>

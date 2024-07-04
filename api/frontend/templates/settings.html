@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'head.html' %}
+
+{% include 'navbar.html' %}
+
+<body>
+    <main class="container mt-5 text-center">
+        <div class="row gx-5">
+            <div class="col-12 mx-auto mb-4">
+                <h1>Settings</h1>
+            </div>
+        </div>
+        
+        <div class="row gx-5" id="default-export-path">
+            <div class="col-8 mx-auto mb-4">
+                <h2 class="mb-3">Export Destination</h2> <!-- Moved inside this div -->
+                <div class="settings-container">
+                    <p id="results-path">Export path: {{ exportPath }}</p>
+                    <button id="selectPathBtn" type="button">Select Path</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row gx-5 advanced" id="dataset-path">
+            <div class="col-8 mx-auto mb-4">
+                <h2 class="mb-3">Current model</h2> 
+                <div class="settings-container overflow-hidden">  <!-- overflow-hidden to prevent text overflow -->
+                    <p id="model-path" style="word-break:break-all;">Current model: {{ model_dir }}</p>
+                    <button id="selectModelBtn" type="button">Select Model</button>
+                </div>
+            </div>
+        </div>
+
+        <input type="hidden" id="advancedSetting" value="{{ advanced }}">
+        <span>Advanced</span>
+        <label class="switch">
+            <input type="checkbox" id="toggle">
+            <span class="slider"></span>
+        </label>
+        
+    </main>
+    <script src="../static/js/settings.js" type="module" defer></script>
+</body>
+</html>
+

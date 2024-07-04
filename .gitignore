@@ -1,0 +1,13 @@
+*.sqlite
+*.db
+__pycache__
+/build
+.DS_store
+/build
+/dist
+run.spec
+api/__pycache__
+/run
+__pycache__/
+.idea/
+*.pyc

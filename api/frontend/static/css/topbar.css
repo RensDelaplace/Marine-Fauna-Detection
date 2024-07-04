@@ -1,0 +1,71 @@
+/* Define color variables for consistency */
+:root {
+    --jdn_red: #BA0C2F;
+    --jdn_black: #2D2A29;
+    --jdn_dark_blue: #1D4F91;
+    --jdn_light_blue: #418FDE;
+    --jdn_yellow: #F1C400;
+    --jdn_purple: #7C6992;
+    --jdn_gray: #D0D0CE;
+}
+
+/* Top navigation container */
+.topnav {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: white;
+    border-bottom: 5px solid var(--jdn_red); /* Highlight bottom border */
+    padding: 5px 10px; /* Adjusted padding for better spacing */
+}
+
+/* Title and logo styles */
+.topnav p {
+    color: var(--jdn_black);
+    font-size: 20px;
+    margin: 0;
+    padding: 5px;
+}
+
+/* Logo */
+.topnav img {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+}
+
+/* Navigation links */
+.topnav a {
+    color: var(--jdn_black);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Styling for active navigation link */
+.topnav-right a.nav-link.active {
+    color: var(--jdn_red) !important; /* Override styles for active link */
+}
+
+/* Hover effect on navigation links */
+.topnav a:hover {
+    background-color: var(--jdn_gray); /* Highlight on hover */
+    color: var(--jdn_red); /* Change text color */
+}
+
+/* Right-aligned links */
+.topnav-right {
+    display: flex;
+    margin-left: auto; /* Align links to the right */
+}
+
+.topnav-right a {
+    margin-right: 5px; /* Reduce spacing between links */
+}
+
+/* Left-aligned logo + title */
+.topnav-left {
+    display: flex;
+    align-items: center;
+}

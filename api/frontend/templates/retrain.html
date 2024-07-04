@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'head.html' %}
+
+{% include 'navbar.html' %}
+
+<body>
+    
+    <main class="container mt-5 text-center">
+        <div class="row gx-5">
+            <div class="col-12 mx-auto mb-4"> 
+                <h1>Current Model</h1>
+            </div>
+        </div>
+
+        <div class="row gx-5">
+
+            <!-- Efficiency Column -->
+            <div class="col-md-6 text-left">
+                <h2>Efficiency:</h2>
+                <img src="../../../models/latest/confusion_matrix.png" alt="Efficiency Image" style="width:100%;">
+            </div>
+
+            <!-- Recognized Species -->
+            <div class="col-md-6 text-left">
+                <h2>Recognized Species:</h2>
+                <div class="scrollbar scrollbar-primary">
+                    <div class="force-overflow">
+                        <!-- Your species list goes here -->
+                        <ul id="classes-list">
+                            {% for class in classes %}
+                                <li>{{ class }}</td>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row gx-5">
+            <div class="col-12 mx-auto mb-4"> 
+                <h1>Make new model</h1>
+                <p>Annotate images on <a href="https://roboflow.com/">Roboflow</a></p>
+            </div>
+        </div>
+
+        <div class="row gx-5">
+            <div class="col-8 mx-auto mb-4">
+                <h2>Dataset</h2>
+                <div class="col-8 mx-auto mb-4">
+                    <div class="settings-container">
+                        <p id="dataset-path" style="word-break:break-all;" >Dataset path: {{ dataset }}</p>
+                        <button id="selectPathBtn" type="button">Select Path</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row gx-5">
+            <div class="col-4 mx-auto">
+                    <h3>Model name:</h3>
+                    <input type="text" class="form-control settings-container" id="nameInput" placeholder="Enter name (default: new)">
+            </div>
+            <div class="col-4 mx-auto">
+                <h3>Number of epochs:</h3>
+                <input type="number" class="form-control settings-container" id="numberInput" placeholder="default: 45, min: 2, max: 100" min="2" max="100">
+            </div>
+        </div>
+        <button type="button" id="retrain-button">Retrain</button>
+        <h6 id="feedback"></h6>
+
+        
+    </main>
+    <script src="../static/js/retrain.js" type="module" defer></script>
+    
+</body>
+</html>
